@@ -8,7 +8,8 @@
     <title>Mapeamela Easy</title>
 
     <!-- Bootstrap -->
-    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,23 +20,30 @@
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col-md-12"><h3>Mapeo de Delitos en Querétaro</h3></div>
+
+      <div class="row row-separator">
+        <div class="col-md-12"><h2>Mapeo de Delitos en Querétaro</h2></div>
       </div>
 
-      <div class="row">
+      <div class="row row-separator">
         <div class="col-md-9">
           <div id="map-canvas"></div>
         </div>
         <div class="col-md-3">
-          Instrucciones Aqui
+          <h3>Instrucciones</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
         </div>
       </div>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>

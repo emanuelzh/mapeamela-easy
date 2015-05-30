@@ -1,0 +1,15 @@
+/*
+	main.css
+*/
+
+.container {
+	width: 100% !important;
+}
+.row-separator {
+	margin-bottom: 15px;
+}
+
+#map-canvas {
+	width: 100%;
+	height: 500px;
+}
