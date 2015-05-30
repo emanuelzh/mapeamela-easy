@@ -31,6 +31,24 @@
         </div>
         <div class="col-md-3">
           <h3>Instrucciones</h3>
+          <ul>
+            <li>Ubica en el mapa el lugar donde ocurrió el incidente, puedes buscar el lugar con el campo arriba del mapa.</li>
+            <li>Llena los campos del formulario</li>
+            <li>Da click en enviar</li>
+          </ul>
+          <hr>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="usuario@ejemplo.com">
+          </div>
+          <div class="form-group">
+            <select id="tipo" name="tipo" class="form-control">
+              <option value="" disabled selected="">Tipo de Delito</option>
+              <option value="1">Asalto en via pública</option>
+              <option value="2">Asalto en transporte público</option>
+            </select>
+          </div>
+          <a class="btn btn-primary btn-lg btn-block">Enviar</a>
         </div>
       </div>
       <div class="row">
