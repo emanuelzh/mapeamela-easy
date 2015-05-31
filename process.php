@@ -15,7 +15,8 @@ $utility = new MapUtility(getenv('DB_NAME'), getenv('DB_USER'), getenv('DB_PASS'
 $lat = $_POST['lat'];
 $lng = $_POST['lng'];
 $tipo = $_POST['tipo'];
-$utility->save($lat, $lng, $tipo);
+$fecha = $_POST['fecha'];
+$utility->save($lat, $lng, $tipo, $fecha);
 
 header('Content-Type: application/json');
 $out = json_encode(["status"=>200,'message'=>"ok"]);

@@ -84,6 +84,7 @@ function enviar() {
 	var the_data = {
 		lat : marker.getPosition().lat(),
 		lng : marker.getPosition().lng(),
+		fecha : $("[name='fecha_submit']").val()+' '+$("[name='hora_submit']").val()+':00',
 		tipo : $("#tipo").val()
 	};
 
@@ -106,8 +107,12 @@ function enviar() {
 $(document).ready(function(){
 
 	//pickadate
-	$("#fecha").pickadate();
-	$("#hora").pickatime();
+	$("#fecha").pickadate({
+		formatSubmit : 'yyyy-mm-dd'
+	});
+	$("#hora").pickatime({
+		formatSubmit : 'HH:i'
+	});
 
 	//inicializa el pinche mapa
 	initialize();

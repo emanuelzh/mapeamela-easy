@@ -12,7 +12,7 @@ class MapUtility {
 			//conexion
 			$this->conn = new PDO('mysql:host=localhost;dbname='.$db_name,$db_user,$db_pass);
 			//save statement
-			$this->save_stm = $this->conn->prepare('INSERT INTO mapeos(lat, lng, tipo, fecha_hora, created) VALUES(?,?,?,NOW(),NOW())');
+			$this->save_stm = $this->conn->prepare('INSERT INTO mapeos(lat, lng, tipo, fecha_hora, created) VALUES(?,?,?,?,NOW())');
 			//data statement
 			$this->data_stm = $this->conn->prepare('SELECT mapeos.*, tipos.nombre as tipo_nombre FROM mapeos INNER JOIN tipos ON tipos.id = mapeos.tipo');
 		}catch(Exception $ex){
@@ -21,9 +21,9 @@ class MapUtility {
 		}
 	}
 
-	public function save($lat, $lng, $tipo) {
+	public function save($lat, $lng, $tipo, $fecha) {
 		try {
-			$this->save_stm->execute([$lat,$lng,$tipo]);
+			$this->save_stm->execute([$lat,$lng,$tipo, $fecha]);
 		}catch(Exception $ex){
 			var_dump($ex);
 			die();
