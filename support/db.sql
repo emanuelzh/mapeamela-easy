@@ -24,6 +24,7 @@ CREATE TABLE mapeos (
 	tipo INT(2) NOT NULL,
 	fecha_hora DATETIME NOT NULL,
 	created DATETIME NOT NULL,
+	descripcion VARCHAR(200),
 	PRIMARY KEY(id)
 );
 

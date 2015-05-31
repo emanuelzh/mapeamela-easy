@@ -16,7 +16,8 @@ $lat = $_POST['lat'];
 $lng = $_POST['lng'];
 $tipo = $_POST['tipo'];
 $fecha = $_POST['fecha'];
-$utility->save($lat, $lng, $tipo, $fecha);
+$desc = $_POST['desc'];
+$utility->save($lat, $lng, $tipo, $fecha, $desc);
 
 header('Content-Type: application/json');
 $out = json_encode(["status"=>200,'message'=>"ok"]);

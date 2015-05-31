@@ -54,7 +54,7 @@ function set_markers(mapa) {
 			        icon: 'http://maps.google.com/mapfiles/ms/icons/purple-dot.png',
 			        title: 'Tipo: '+evento.tipo_nombre
 			    });
-			    mrk.el_contenido = create_infowindow(evento.tipo_nombre, evento.fecha_hora);
+			    mrk.el_contenido = create_infowindow(evento.tipo_nombre, evento.fecha_hora, evento.descripcion);
 			    markers[i] = mrk;
 			    google.maps.event.addListener(markers[i], 'click', function(){
 			    	infowindow.setContent(this.el_contenido);
@@ -69,12 +69,13 @@ function set_markers(mapa) {
 }
 
 //crear un info windows
-function create_infowindow(tipo, fecha) {
+function create_infowindow(tipo, fecha, desc) {
 	var ff = moment(fecha);
 	var wrapper = $("<div></div>");
 	var titulo = $("<h3></h3>").text(tipo);
 	var fechora = $("<h4></h4>").text(ff.format("DD [de] MMMM YYYY, hh:mmA"));
-	var info = $("<div></div>").append(titulo).append(fechora);
+	var desc = $("<p></p>").text(desc);
+	var info = $("<div></div>").append(titulo).append(fechora).append(desc);
 	wrapper.append(info);
 	return wrapper.html();
 }
@@ -87,7 +88,8 @@ function enviar() {
 		lat : marker.getPosition().lat(),
 		lng : marker.getPosition().lng(),
 		fecha : $("[name='fecha_submit']").val()+' '+$("[name='hora_submit']").val()+':00',
-		tipo : $("#tipo").val()
+		tipo : $("#tipo").val(),
+		desc : $("#descr").val()
 	};
 
 	console.log(the_data);
