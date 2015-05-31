@@ -10,6 +10,11 @@ function initialize() {
 
 //jquery dom
 $(document).ready(function(){
+
+	//pickadate
+	$("#fecha").pickadate();
+	$("#hora").pickatime();
+
 	//inicializa el pinche mapa
 	initialize();
 });
