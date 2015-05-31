@@ -14,7 +14,7 @@ class MapUtility {
 			//save statement
 			$this->save_stm = $this->conn->prepare('INSERT INTO mapeos(lat, lng, tipo, fecha_hora, created) VALUES(?,?,?,NOW(),NOW())');
 			//data statement
-			$this->data_stm = $this->conn->prepare('SELECT * FROM mapeos');
+			$this->data_stm = $this->conn->prepare('SELECT mapeos.*, tipos.nombre as tipo_nombre FROM mapeos INNER JOIN tipos ON tipos.id = mapeos.tipo');
 		}catch(Exception $ex){
 			var_dump($ex);
 			die();

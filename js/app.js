@@ -2,6 +2,8 @@ var geocoder;
 var map;
 var lnq = new google.maps.LatLng(20.592798,-100.390231);
 var marker;
+var markers=[];
+var infowindow;
 
 //inicializa los servicios de google maps
 function initialize() {
@@ -31,6 +33,11 @@ function initialize() {
 //carga los markers contenidos en un dataset
 function set_markers(mapa) {
 
+	//infowindow general
+	infowindow = new google.maps.InfoWindow({
+		content : "Holding..."
+	});
+
 	$.get('data.php',function(response){
 
 		if(response.status == 200) {
@@ -40,17 +47,34 @@ function set_markers(mapa) {
 			for (var i = 0; i < locations.length; i++) {
 			    var evento = locations[i];
 			    var myLatLng = new google.maps.LatLng(evento.lat, evento.lng);
+			    
 			    var mrk = new google.maps.Marker({
 			        position: myLatLng,
 			        map: map,
 			        icon: 'http://maps.google.com/mapfiles/ms/icons/purple-dot.png',
-			        title: 'Tipo: '+evento.tipo
+			        title: 'Tipo: '+evento.tipo_nombre
+			    });
+			    mrk.el_contenido = create_infowindow(evento.tipo_nombre);
+			    markers[i] = mrk;
+			    google.maps.event.addListener(markers[i], 'click', function(){
+			    	infowindow.setContent(this.el_contenido);
+			    	infowindow.open(map, this);
 			    });
 			}
 			
 		}
 
 	});
+}
+
+//crear un info windows
+function create_infowindow(tipo, fecha) {
+	var wrapper = $("<div></div>");
+	var titulo = $("<h4></h4>").text(tipo);
+	var hora = $("<p></p>").text(fecha);
+	var info = $("<div></div>").append(titulo);
+	wrapper.append(info);
+	return wrapper.html();
 }
 
 //envia el mapeo a la base de datos
@@ -96,5 +120,7 @@ $(document).ready(function(){
 
 		//procesar el form
 		enviar();
-	})
+	});
+
+	create_infowindow('Robo');
 });
