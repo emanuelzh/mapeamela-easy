@@ -112,7 +112,8 @@ $(document).ready(function(){
 
 	//pickadate
 	$("#fecha").pickadate({
-		formatSubmit : 'yyyy-mm-dd'
+		formatSubmit : 'yyyy-mm-dd',
+		max : true
 	});
 	$("#hora").pickatime({
 		formatSubmit : 'HH:i'
