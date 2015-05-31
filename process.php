@@ -9,7 +9,7 @@ $dotenv = new Dotenv\Dotenv(__DIR__);
 $dotenv->load();
 
 //data utility
-$utility = new MapUtility(getenv('DB_USER'), getenv('DB_PASS'));
+$utility = new MapUtility(getenv('DB_NAME'), getenv('DB_USER'), getenv('DB_PASS'));
 
 //procesar los datos de PHP
 $lat = $_POST['lat'];

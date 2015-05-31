@@ -6,11 +6,11 @@ class MapUtility {
 	private $save_stm;
 	private $data_stm;
 
-	function __construct($db_user, $db_pass) {
+	function __construct($db_name, $db_user, $db_pass) {
 
 		try {
 			//conexion
-			$this->conn = new PDO('mysql:host=localhost;dbname=mapeo',$db_user,$db_pass);
+			$this->conn = new PDO('mysql:host=localhost;dbname='.$db_name,$db_user,$db_pass);
 			//save statement
 			$this->save_stm = $this->conn->prepare('INSERT INTO mapeos(lat, lng, tipo, fecha_hora, created) VALUES(?,?,?,NOW(),NOW())');
 			//data statement
