@@ -11,7 +11,7 @@ INSERT INTO tipos(nombre) VALUES
 	('Asalto (arma blanca)'),
     ('Asalto (arma de fuego)'),
     ('Robo (casa/oficina/local)'),
-	('Robo (bicileta)'),
+	('Robo (bicicleta)'),
 	('Robo (auto)'),
 	('Acoso (contra mujer)'),
 	('Acoso (homofobia)'),
