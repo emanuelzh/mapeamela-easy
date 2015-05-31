@@ -6,11 +6,11 @@ class MapUtility {
 	private $save_stm;
 	private $data_stm;
 
-	function __construct() {
+	function __construct($db_user, $db_pass) {
 
 		try {
 			//conexion
-			$this->conn = new PDO('mysql:host=localhost;dbname=mapeo','mapeo','password');
+			$this->conn = new PDO('mysql:host=localhost;dbname=mapeo',$db_user,$db_pass);
 			//save statement
 			$this->save_stm = $this->conn->prepare('INSERT INTO mapeos(lat, lng, tipo, fecha_hora, created) VALUES(?,?,?,NOW(),NOW())');
 			//data statement
@@ -31,23 +31,17 @@ class MapUtility {
 	}
 
 	public function data() {
-
 		$output = [];
 		try {
-			
 			if($this->data_stm->execute()){
 				while($row = $this->data_stm->fetch(PDO::FETCH_OBJ)) {
 					$output[] = $row;
 				}
 			}
-			return $output;
 		} catch(Exception $ex) {
-			print("error");
-			return $output;
+			$output = [];
 		}
-		
-		
-
+		return $output;
 	}
 
 }

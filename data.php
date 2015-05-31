@@ -1,11 +1,15 @@
 <?php
-error_reporting(E_ALL);
 
 //db and shit
+require('vendor/autoload.php');
 require('include/MapUtility.php');
 
-//obtener los datos
-$utility = new MapUtility;
+//envs
+$dotenv = new Dotenv\Dotenv(__DIR__);
+$dotenv->load();
+
+//data utility
+$utility = new MapUtility(getenv('DB_USER'), getenv('DB_PASS'));
 $datos = $utility->data();
 
 header('Content-Type: application/json');
