@@ -54,11 +54,12 @@ function set_markers(mapa) {
 			        icon: 'http://maps.google.com/mapfiles/ms/icons/purple-dot.png',
 			        title: 'Tipo: '+evento.tipo_nombre
 			    });
-			    mrk.el_contenido = create_infowindow(evento.tipo_nombre);
+			    mrk.el_contenido = create_infowindow(evento.tipo_nombre, evento.fecha_hora);
 			    markers[i] = mrk;
 			    google.maps.event.addListener(markers[i], 'click', function(){
 			    	infowindow.setContent(this.el_contenido);
 			    	infowindow.open(map, this);
+			    	map.setCenter(this.getPosition());
 			    });
 			}
 			
@@ -69,10 +70,11 @@ function set_markers(mapa) {
 
 //crear un info windows
 function create_infowindow(tipo, fecha) {
+	var ff = moment(fecha);
 	var wrapper = $("<div></div>");
-	var titulo = $("<h4></h4>").text(tipo);
-	var hora = $("<p></p>").text(fecha);
-	var info = $("<div></div>").append(titulo);
+	var titulo = $("<h3></h3>").text(tipo);
+	var fechora = $("<h4></h4>").text(ff.format("DD [de] MMMM YYYY, hh:mmA"));
+	var info = $("<div></div>").append(titulo).append(fechora);
 	wrapper.append(info);
 	return wrapper.html();
 }
