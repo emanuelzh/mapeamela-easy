@@ -12,6 +12,7 @@
     <link href="bower_components/pickadate/lib/compressed/themes/default.css" rel="stylesheet">
     <link href="bower_components/pickadate/lib/compressed/themes/default.date.css" rel="stylesheet">
     <link href="bower_components/pickadate/lib/compressed/themes/default.time.css" rel="stylesheet">
+    <link href="bower_components/apprise/apprise-v2.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -35,27 +36,23 @@
         <div class="col-md-3">
           <h3>Instrucciones</h3>
           <ul>
-            <li>Ubica en el mapa el lugar donde ocurrió el incidente, puedes buscar el lugar con el campo arriba del mapa.</li>
+            <li>Ubica en el mapa el lugar donde ocurrió el incidente arrastrando el marcador rojo.</li>
             <li>Llena los campos del formulario</li>
             <li>Da click en enviar</li>
           </ul>
           <hr>
           <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="usuario@ejemplo.com">
-          </div>
-          <div class="form-group">
             <select id="tipo" name="tipo" class="form-control">
               <option value="" disabled selected="">Tipo de Delito</option>
-              <option value="1">Asalto (sin arma)</option>
-              <option value="2">Asalto (arma blanca)</option>
-              <option value="3">Asalto (arma de fuego)</option>
-              <option value="4">Robo (casa/oficina/local)</option>
-              <option value="5">Robo (bicileta)</option>
-              <option value="6">Robo (auto)</option>
-              <option value="7">Acoso (contra mujer)</option>
-              <option value="8">Acoso (homofobia)</option>
-              <option value="9">Acoso (otro)</option>
+              <option value="0">Asalto (sin arma)</option>
+              <option value="1">Asalto (arma blanca)</option>
+              <option value="2">Asalto (arma de fuego)</option>
+              <option value="3">Robo (casa/oficina/local)</option>
+              <option value="4">Robo (bicileta)</option>
+              <option value="5">Robo (auto)</option>
+              <option value="6">Acoso (contra mujer)</option>
+              <option value="7">Acoso (homofobia)</option>
+              <option value="8">Acoso (otro)</option>
             </select>
           </div>
           <div class="form-group">
@@ -66,7 +63,7 @@
             <label for="hora">Hora</label>
             <input type="text" class="form-control" id="hora" name="hora" placeholder="Click para hora...">
           </div>
-          <a class="btn btn-primary btn-lg btn-block">Enviar</a>
+          <a id="enviar" class="btn btn-primary btn-lg btn-block">Enviar</a>
         </div>
       </div>
       <div class="row">
@@ -83,6 +80,7 @@
     <script src="bower_components/pickadate/lib/compressed/picker.date.js"></script>
     <script src="bower_components/pickadate/lib/compressed/picker.time.js"></script>
     <script src="bower_components/pickadate/lib/compressed/legacy.js"></script>
+    <script src="bower_components/apprise/apprise-v2.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3"></script>
     <script src="js/app.js"></script>
   </body>
