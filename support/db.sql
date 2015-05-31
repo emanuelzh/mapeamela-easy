@@ -3,7 +3,7 @@ CREATE TABLE tipos (
 	nombre VARCHAR(64)
 );
 
-INSERT INTO tipos (nombre) VALUES
+INSERT INTO tipos(nombre) VALUES
 	('Asalto (sin arma)'),
 	('Asalto (arma blanca)'),
     ('Asalto (arma de fuego)'),
@@ -17,8 +17,8 @@ INSERT INTO tipos (nombre) VALUES
 CREATE TABLE mapeos (
 	id MEDIUMINT NOT NULL AUTO_INCREMENT,
 	lat FLOAT(4,6) NOT NULL,
-	long FLOAT(4,6) NOT NULL,
+	lng FLOAT(4,6) NOT NULL,
 	tipo INT(2) NOT NULL,
 	fecha_hora DATETIME NOT NULL,
-	fechahora_registro DATETIME NOT NULL
+	created DATETIME NOT NULL
 );
