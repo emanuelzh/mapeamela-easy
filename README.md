@@ -3,8 +3,6 @@ Otra herramienta mas de mapeo porque ushahidi es un desmadre y otras estaban gac
 
 Ejemplo de uso en [denunciaq.citydevs.mx](http://denunciaq.citydevs.mx)
 
---
-
 #Requerimientos
 - Un Web Server con PHP 5.4+
 - MySQL o MariaDB
