@@ -1,5 +1,3 @@
-CREATE DATABASE mapeo;
-
 CREATE TABLE tipos (
 	id INT(5) NOT NULL AUTO_INCREMENT,
 	nombre VARCHAR(64),
@@ -27,7 +25,3 @@ CREATE TABLE mapeos (
 	descripcion VARCHAR(200),
 	PRIMARY KEY(id)
 );
-
-CREATE USER 'mapeo'@'%' IDENTIFIED BY 'password';
-GRANT ALL ON mapeo.* TO 'mapeo'@'%' WITH GRANT OPTION;
-FLUSH PRIVILEGES;
