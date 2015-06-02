@@ -101,7 +101,7 @@ Y obtenemos la siguiente estructura
 
 #Comentarios, quejas y contribuciones
 
-- Si te gusta y quieres que siga desarrollando cosas dale estella e invitame una chela.
+- Si te gusta y quieres que siga desarrollando cosas dale estrella e invitame una chela.
 - Si tiene una bronca o algo falla abre un issue.
 - Si quieres contribuir con una funcionalidad o arreglar un bug haz fork al repo, edita y solicita un pull request.
 - Si tienes comentarios y mentadas (o me quieres comprar una chela) escribe a [@emanuelzh](http://twitter.com/emanuelzh) o [emanuel@citydevs.mx](mailto:emanuel@citydevs.mx)
